@@ -12,4 +12,9 @@ app.get("/",(req,res) => {
 app.get("/perguntar",(req, res) => {
     res.render("perguntar")
 })
+
+app.post("/salvarpergunta", (req, res) => {//rotas de formularios  requer o tipo post || a rota já está no form do perguntar
+    res.send("Formulario recebido!")
+})
+
 app.listen(8080,()=>{console.log("App rodando!")})
