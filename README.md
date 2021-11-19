@@ -4,6 +4,7 @@ Tecnologias utilizadas
 Javascript
 Node
 Express
-MySQL
-Bootstrap
 EJS
+MySQL
+Sequelize
+Bootstrap
