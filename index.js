@@ -26,7 +26,9 @@ app.use(bodyParser.json())
 
 //Rotas
 app.get("/",(req,res) => {
-    Pergunta.findAll({ raw:true}).then(perguntas => {//rotas de perguntas
+    Pergunta.findAll({ raw:true, order:[
+        ['id', 'DESC']//ordenando por ordem decrescente usando o ID
+    ]}).then(perguntas => {//rotas de perguntas | recebendo um array de perguntas
         res.render("index", {
             perguntas:perguntas
         })
