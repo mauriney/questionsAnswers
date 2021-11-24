@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const bodyParser = require("body-parser")
 const connection = require("./database/database")
-const perguntaModel = require("./database/Pergunta")
+const Pergunta = require("./database/Pergunta")
 
 //Database conexão
 connection
@@ -38,7 +38,12 @@ app.get("/perguntar",(req, res) => {
 app.post("/salvarpergunta", (req, res) => {//rotas de formularios  requer o tipo post || a rota já está no form do perguntar
     let titulo = req.body.titulo; //recebe o titulo do name do formulario perguntar e passa pra variavel titulo
     let descricao = req.body.descricao;
-    res.send("Formulario recebido! titulo " + titulo + " " + "descricao " + descricao)
+    Pergunta.create({ //create é responsavel por criar a pergunta é o equivalente ao INSERT ...
+        titulo: titulo,
+        descricao: descricao
+    }).then(() => {
+        res.redirect("/")//redirecionando para home após perguntar
+    })
 })
 
 app.listen(8080,()=>{console.log("App rodando!")})

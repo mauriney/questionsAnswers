@@ -15,3 +15,5 @@ const Pergunta = connection.define('perguntas',{//definindo o nome da tabela
 Pergunta.sync({force: false}).then(() => {//sincroniza Pergunta com o banco de dados | force: false evita que a tabela seja recriada se já existir
     console.log('tabela criada')
 });
+
+module.exports = Pergunta;
