@@ -23,12 +23,14 @@ app.use(express.static('public'));//informand que vai utilizar arquivos estatico
 app.use(bodyParser.urlencoded({extended: false}))//permite com que a pessoa envie os dados do formulario para uma estrutura JS (Decodificar os dados do formulario)
 app.use(bodyParser.json())
 
-// app.use(express.urlencoded({ extended: false })); //permite com que a pessoa envie os dados do formulario para uma estrutura JS (Decodificar os dados do formulario)
-// app.use(express.json());
 
-//rotas
+//Rotas
 app.get("/",(req,res) => {
-    res.render('index')//pega automaticamente na pasta views
+    Pergunta.findAll({ raw:true}).then(perguntas => {//rotas de perguntas
+        res.render("index", {
+            perguntas:perguntas
+        })
+    })
 });
 
 app.get("/perguntar",(req, res) => {
