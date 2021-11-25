@@ -56,7 +56,9 @@ app.get("/pergunta/:id", (req, res) => {
         where: {id: id}//busca pelo json id igual o valor colocado no parametro id
     }).then(pergunta => {// quando a busca for concluida passa a pergunta
         if(pergunta != undefined){// pergunta encontrada
-            res.render("pergunta")
+            res.render("pergunta",{
+                pergunta: pergunta
+            });
         }else {// não encontrada
             res.redirect("/")
         }
