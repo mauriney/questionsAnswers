@@ -50,4 +50,17 @@ app.post("/salvarpergunta", (req, res) => {//rotas de formularios  requer o tipo
     })
 })
 
+app.get("/pergunta/:id", (req, res) => {
+    let id = req.params.id;
+    Pergunta.findOne({//findOne método que busca um dado no banco de dados
+        where: {id: id}//busca pelo json id igual o valor colocado no parametro id
+    }).then(pergunta => {// quando a busca for concluida passa a pergunta
+        if(pergunta != undefined){// pergunta encontrada
+            res.render("pergunta")
+        }else {// não encontrada
+            res.redirect("/")
+        }
+    });
+});
+
 app.listen(8080,()=>{console.log("App rodando!")})
