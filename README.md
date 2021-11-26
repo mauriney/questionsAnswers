@@ -29,23 +29,13 @@ npm install
 ```
 npm init -y
 ```
-Para o projeto funcionar perfeitamente deve realizar a instalação das seguintes tecnologias 
 
-Instalar o EJS
+Executa o SQL para criar o banco de dados. 
+(database/db_2021-11-25_questions_answers.sql)
+
+* Observação: Se estiver usando uma versão mysql superior a 8.0 deverá fazer o seguinte procedimento após a criação do banco de dados para corrigir o erro de conexão do Sequelize.
 ```
-npm install ejs
-```
-Instalar Express para criar um servidor
-```
-npm install express --save
-```
-Instalar mySQL para fazer a comunicação com o Sequelize
-```
-npm install mysql2 --save
-```
-Instalar Sequelize para ter suporte a transações com o banco de dados
-```
-npm install --save sequelize
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'SUASENHA'
 ```
 
 
