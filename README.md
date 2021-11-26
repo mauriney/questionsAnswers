@@ -24,26 +24,28 @@ Para rodar o repositório é necessário clonar o mesmo, ter node.js instalado n
 
 Instalar  e iniciar NPM
 ```
-<npm install>
-<npm init -y>
+npm install
+```
+```
+npm init -y
 ```
 Para o projeto funcionar perfeitamente deve realizar a instalação das seguintes tecnologias 
 
 Instalar o EJS
 ```
-<npm install ejs>
+npm install ejs
 ```
 Instalar Express para criar um servidor
 ```
-<npm install express --save>
+npm install express --save
 ```
 Instalar mySQL para fazer a comunicação com o Sequelize
 ```
-<npm install mysql2 --save>
+npm install mysql2 --save
 ```
 Instalar Sequelize para ter suporte a transações com o banco de dados
 ```
-<npm install --save sequelize>
+npm install --save sequelize
 ```
 
 
@@ -67,7 +69,7 @@ Instalar Sequelize para ter suporte a transações com o banco de dados
 </table>
 
 ## :dart: Status do projeto
-* **Primeira etapa:  Finalizada;**
+* **Primeira etapa:  Finalizada;** 
 * **Segunda etapa: Em andamento;**
 
 ## Creditos
